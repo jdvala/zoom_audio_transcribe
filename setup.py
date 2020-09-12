@@ -1,23 +1,24 @@
-from pathlib import Path
+import io
+import os.path as path
 
 from setuptools import find_packages, setup
 
-here = Path(__file__).parent
+here = path.abspath(path.dirname(__file__))
 
-requirements_path = here / "requirements" / "prod.txt"
+requirements_path = path.join(here, "requirements", "prod.txt")
 
 
 def read_requirements(path):
     try:
-        with path.open(mode="rt", encoding="utf-8") as fp:
+        with io.open(path, mode="rt", encoding="utf-8") as fp:
             return list(filter(None, (line.split("#")[0].strip() for line in fp)))
     except IndexError:
-        raise RuntimeError(f"{path} is broken")
+        raise RuntimeError("{} is broken".format(path))
 
 
 setup(
     name="zoom_audio_transcribe",
-    python_requires=">3.5",
+    python_requires=">=3.5",
     setup_requires=["setuptools_scm"],
     install_requires=read_requirements(requirements_path),
     use_scm_version={
@@ -34,6 +35,21 @@ setup(
     entry_points={
         "console_scripts": ["zoom_audio_transcribe = zoom_audio_transcribe.cli:main"]
     },
+    classifiers=[
+        "Development Status :: 5 - Production/Stable",
+        "Environment :: Console",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 3.5",
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
+        "Topic :: Software Development :: Libraries :: Python Modules",
+        "Topic :: System :: Archiving :: Packaging",
+        "Topic :: System :: Systems Administration",
+        "Topic :: System :: Installation/Setup",
+        "Topic :: Utilities",
+    ],
     author="Jay Vala",
     author_email="jay.vala@msn.com",
     url="https://github.com/jdvala/zoom_audio_transcribe",
