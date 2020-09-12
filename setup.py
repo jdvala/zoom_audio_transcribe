@@ -17,7 +17,7 @@ def read_requirements(path):
 
 setup(
     name="zoom_audio_transcribe",
-    python_requires=">=3.8.0",
+    python_requires=">3.5",
     setup_requires=["setuptools_scm"],
     install_requires=read_requirements(requirements_path),
     use_scm_version={
@@ -32,12 +32,9 @@ setup(
     packages=find_packages(where="src"),
     package_dir={"": "src"},
     entry_points={
-        "console_scripts": [
-            "zoom_audio_transcribe = zoom_audio_transcribe.cli:entrypoint"
-        ]
+        "console_scripts": ["zoom_audio_transcribe = zoom_audio_transcribe.cli:main"]
     },
     author="Jay Vala",
     author_email="jay.vala@msn.com",
     url="https://github.com/jdvala/zoom_audio_transcribe",
 )
-

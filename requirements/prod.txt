@@ -1,0 +1,6 @@
+prompt_toolkit==1.0.14
+PyInquirer==1.0.3
+pydub==0.24.1
+halo==0.0.30
+art==4.7.0
+vosk==0.3.10
