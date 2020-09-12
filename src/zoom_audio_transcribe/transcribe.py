@@ -39,7 +39,8 @@ def _download_model() -> bool:
 
     for file_name in os.listdir("/tmp/vosk-model-small-en-us-0.3/"):
         shutil.move(
-            f"/tmp/vosk-model-small-en-us-0.3/{file_name}", f"{MODEL_PATH}/{file_name}"
+            "/tmp/vosk-model-small-en-us-0.3/{}".format(file_name),
+            "{}/{}".format(MODEL_PATH, file_name),
         )
     logger.info("Model download complete.")
     return True
