@@ -18,7 +18,7 @@ def read_requirements(path):
 
 setup(
     name="zoom_audio_transcribe",
-    python_requires=">=3.5",
+    python_requires=">=3.6",
     setup_requires=["setuptools_scm"],
     install_requires=read_requirements(requirements_path),
     use_scm_version={
