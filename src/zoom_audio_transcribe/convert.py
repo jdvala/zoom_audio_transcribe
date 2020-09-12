@@ -15,19 +15,19 @@ def _convert_from_m4a_to_wav(path: str) -> None:
         path: Path of the file to be converted.
     """
     if not os.path.exists(path):
-        raise ValueError(f"Path not found: {path}")
+        raise ValueError("Path not found: {}".format(path))
 
     file_name = os.path.split(path.rstrip("/"))[-1]
     audio_only = Path(path) / "audio_only.m4a"
 
     if not audio_only.exists:
-        raise ValueError(f"No audio file found for {audio_only}")
+        raise ValueError("No audio file found for {}".format(audio_only))
 
     audio_recording = AudioSegment.from_file(audio_only, format="m4a")
     logging.info(
-        f"Audio file {file_name} loaded. Starting the conversion process to wav"
+        "Audio file {} loaded. Starting the conversion process to wav".format(file_name)
     )
 
-    audio_recording.export(f"{path}/{file_name}.wav", format("wav"))
+    audio_recording.export("{}/{}.wav".format(path, file_name), format("wav"))
 
-    logging.info(f"Conversion complete. File saved at {path}/{file_name}.wav")
+    logging.info("Conversion complete. File saved at {}/{}.wav".format(path, file_name))

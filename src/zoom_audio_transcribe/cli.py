@@ -48,10 +48,12 @@ def main() -> None:
     _convert_from_m4a_to_wav(os.path.join(ZOOM_DIR, folder_name))
 
     transcribed_text = transcribe(
-        os.path.join(os.path.join(ZOOM_DIR, folder_name, f"{folder_name}.wav"))
+        os.path.join(os.path.join(ZOOM_DIR, folder_name, "{}.wav").format(folder_name))
     )
 
-    with open(os.path.join(ZOOM_DIR, folder_name, f"{folder_name}.txt"), "w") as f:
+    with open(
+        os.path.join(ZOOM_DIR, folder_name, "{}.txt".format(folder_name)), "w"
+    ) as f:
         f.write(transcribed_text)
 
 
