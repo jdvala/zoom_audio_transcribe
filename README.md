@@ -1,7 +1,7 @@
 # zoom_audio_transcribe
 ![GH](https://github.com/jdvala/zoom-audio-transcribe/workflows/GH/badge.svg)
 ![Licence](https://img.shields.io/github/license/jdvala/zoom_audio_transcribe)
-[![pypi Version](https://img.shields.io/pypi/v/pipgrip.svg?logo=pypi&logoColor=white)](https://pypi.org/project/zoom-audio-transcribe/  )
+[![pypi Version](https://img.shields.io/pypi/v/zoom-audio-transcribe.svg?logo=pypi&logoColor=white)](https://pypi.org/project/zoom-audio-transcribe/  )
 [![python](https://img.shields.io/pypi/pyversions/zoom-audio-transcribe)](https://pypi.org/project/zoom-audio-transcribe/)
 [![black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/python/black)
 ![OS](https://img.shields.io/badge/OS-Linux-organe)
