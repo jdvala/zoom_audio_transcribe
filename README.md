@@ -22,10 +22,10 @@ pip install zoom_audio_transcribe
 $ zoom_audio_transcribe
 ```
 
-![init](https://github.com/jdvala/zoom-audio-transcribe/)
+![init](https://github.com/jdvala/zoom-audio-transcribe/blob/master/screenshots/init.png)
 
 
-![Done]()
+![Done](https://github.com/jdvala/zoom-audio-transcribe/blob/master/screenshots/done.png)
 
 
 ---
