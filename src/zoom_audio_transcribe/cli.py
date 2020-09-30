@@ -5,6 +5,7 @@ from os.path import expanduser
 from typing import Dict, List
 
 from art import tprint
+from cliche import cli, main
 from PyInquirer import Separator, prompt
 
 from zoom_audio_transcribe.convert import _convert_from_m4a_to_wav
@@ -39,7 +40,8 @@ def user_response() -> Dict[str, str]:
     return answers
 
 
-def main() -> None:
+@cli
+def run() -> None:
     """Main."""
     tprint("Zoom Audio Transcribe")
     user_res = user_response()
@@ -51,9 +53,7 @@ def main() -> None:
         os.path.join(os.path.join(ZOOM_DIR, folder_name, "{}.wav").format(folder_name))
     )
 
-    with open(
-        os.path.join(ZOOM_DIR, folder_name, "{}.txt".format(folder_name)), "w"
-    ) as f:
+    with open(os.path.join(ZOOM_DIR, folder_name, "{}.txt".format(folder_name)), "w") as f:
         f.write(transcribed_text)
 
 
